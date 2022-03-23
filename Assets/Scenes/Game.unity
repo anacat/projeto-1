@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 1698637193}
   - component: {fileID: 1698637191}
   - component: {fileID: 1698637192}
+  - component: {fileID: 1698637196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -809,8 +810,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputController: {fileID: 826353998}
+  cameraTransform: {fileID: 367480608}
   playerSpeed: 2
   jumpHeight: 1
+  gravityValue: -9.81
 --- !u!23 &1698637193
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -818,7 +821,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698637190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -875,6 +878,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1698637196
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698637190}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1873004341
 GameObject:
   m_ObjectHideFlags: 0
