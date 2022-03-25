@@ -44,6 +44,17 @@ public class InputController : MonoBehaviour
         return _playerControls.Player.Look.ReadValue<Vector2>();
     }
 
+    public Vector2 GetMousePosition()
+    {
+        return _playerControls.Player.MousePosition.ReadValue<Vector2>();
+    }
+
+    public bool PlayerShotInThisFrame()
+    {
+        return _playerControls.Player.Shoot.triggered;
+    }
+        
+
     private void OnDisable()
     {
         _playerControls.Disable();
