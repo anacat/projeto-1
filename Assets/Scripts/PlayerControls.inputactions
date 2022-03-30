@@ -44,7 +44,7 @@
                 {
                     "name": "Shoot",
                     "type": "Button",
-                    "id": "b29986cc-38d5-49a9-98fd-79c0e47df8b8",
+                    "id": "ff1a11f2-37ff-4618-89b9-3a1184eaee0c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -142,7 +142,7 @@
                 },
                 {
                     "name": "",
-                    "id": "7ba119f6-a530-4bce-b5c8-8f29f1793806",
+                    "id": "74c57589-5eed-4fc3-943e-143c0d390257",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
