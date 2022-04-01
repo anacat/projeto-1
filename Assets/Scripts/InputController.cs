@@ -5,23 +5,22 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+    public static InputController Instance;
+    
     private PlayerControls _playerControls;
-    
-    /*Ordem das funções
-     
-    Awake
-    OnEnable
-    Start
-    FixedUpdate
-    Update
-    LateUpdate
-    OnDisable
-    OnDestroy
-    */
-    
+
     private void Awake()
     {
         _playerControls = new PlayerControls();
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void OnEnable()
@@ -52,6 +51,11 @@ public class InputController : MonoBehaviour
     public bool PlayerShotInThisFrame()
     {
         return _playerControls.Player.Shoot.triggered;
+    }
+
+    public bool SpawnEnemyButton()
+    {
+        return _playerControls.Player.SpawnEnemy.triggered;
     }
         
 

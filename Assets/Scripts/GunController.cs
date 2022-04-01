@@ -48,23 +48,38 @@ public class GunController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, shootingDistance))
         {
-            Debug.Log(hit.collider.name);
-            StartCoroutine(BulletTrail(hit));
+            Debug.Log(hit.collider.tag);
+
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                Destroy(hit.transform.gameObject);
+            }
         }
         
+        StartCoroutine(BulletTrail(hit, ray));
+
         //Debug.DrawRay(ray.origin, ray.direction * shootingDistance, Color.red, 5f);
 
         _lastShotTime = Time.time;
     }
 
-    private IEnumerator BulletTrail(RaycastHit hit)
+    private IEnumerator BulletTrail(RaycastHit hit, Ray ray)
     {
         float percentage = 0f;
         float time = 0f;
         float timer = 0f;
         
         Vector3 startPosition = muzzle.position;
-        Vector3 finalPosition = hit.point;
+        Vector3 finalPosition;
+        
+        if (hit.collider == null)
+        {
+            finalPosition = ray.origin + ray.direction * shootingDistance; //se não acertar num objeto, segue a direção do raio do raycast
+        }
+        else
+        {
+            finalPosition = hit.point; //se acertar nalgum objeto, a posição final será o ponto de colisão
+        }
 
         GameObject newTrail = Instantiate(bulletTrailPrefab, transform.position, transform.rotation);
         time = newTrail.GetComponent<TrailRenderer>().time;
