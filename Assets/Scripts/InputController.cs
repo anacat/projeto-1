@@ -57,7 +57,10 @@ public class InputController : MonoBehaviour
     {
         return _playerControls.Player.SpawnEnemy.triggered;
     }
-        
+
+    public bool Weapon1() => _playerControls.Player.Weapon1.triggered;
+    
+    public bool Weapon2() => _playerControls.Player.Weapon2.triggered;
 
     private void OnDisable()
     {

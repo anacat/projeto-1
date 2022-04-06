@@ -1,18 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public InputController inputController;
     public float shootingDistance;
     public Transform muzzle;
     public GameObject bulletTrailPrefab;
     public float fireDelay = 0.1f;
 
+    public int damage = 5;
+
     private Camera _camera;
     private float _lastShotTime = 0f;
-    
+
+    public Animator animator;
+    public bool hideAnimationEnded;
+    public MeshRenderer meshRenderer;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +34,7 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (inputController.PlayerShotInThisFrame()) //se não tiver PlayerInput nos components do jogador/para utilizar o InputController
+        if (InputController.Instance.PlayerShotInThisFrame()) //se não tiver PlayerInput nos components do jogador/para utilizar o InputController
         {
             Shoot();
         }
@@ -52,7 +64,8 @@ public class GunController : MonoBehaviour
 
             if (hit.collider.CompareTag("Enemy"))
             {
-                Destroy(hit.transform.gameObject);
+                hit.collider.GetComponent<EnemyController>().GotShot(damage);
+                //Destroy(hit.transform.gameObject);
             }
         }
         
@@ -93,5 +106,11 @@ public class GunController : MonoBehaviour
             
             yield return null;
         }
+    }
+
+    public void OnHideAnimationEnded() //evento chamado no final da animação de hide da arma (ver aba de animation da arma no unity)
+    {
+        meshRenderer.enabled = false; //escondemos a mesh em vez de desativar o gameobject, para evitar problemas com o animator
+        hideAnimationEnded = true;
     }
 }
