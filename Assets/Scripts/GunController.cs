@@ -47,7 +47,12 @@ public class GunController : MonoBehaviour
 
     private void Shoot()
     {
-        bool canShoot = Time.time - _lastShotTime > fireDelay;
+        if (PlayerController.Instance.isDead)
+        {
+            return;
+        }
+        
+        bool canShoot = Time.time - _lastShotTime > fireDelay && meshRenderer.enabled;
 
         if (!canShoot)
         {

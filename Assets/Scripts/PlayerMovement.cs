@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     public float gravityValue = -9.81f;
-
+    
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -25,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (PlayerController.Instance.isDead)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
+            return;
+        }
+        
         groundedPlayer = controller.isGrounded;
         
         if (groundedPlayer && playerVelocity.y < 0)

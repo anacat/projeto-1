@@ -21,7 +21,12 @@ public class PistolController : MonoBehaviour
 
     void Update()
     {
-        if (InputController.Instance.PlayerShotInThisFrame())
+        if (PlayerController.Instance.isDead)
+        {
+            return;
+        }
+        
+        if (InputController.Instance.PlayerShotInThisFrame() && meshRenderer.enabled)
         {
             ShootProjectile();
         }

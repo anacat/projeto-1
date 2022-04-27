@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+    
     public Slider healthSlider;
     public TextMeshProUGUI healthText;
     
@@ -16,9 +18,23 @@ public class PlayerController : MonoBehaviour
     private float collisionDelay = 0.5f;
     private float collisionTimer;
 
+    public bool isDead;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     private void Start()
     {
-        healthSlider.maxValue = maxHp;
+            healthSlider.maxValue = maxHp;
         healthSlider.minValue = 0;
         healthSlider.value = hp;
         
@@ -55,5 +71,12 @@ public class PlayerController : MonoBehaviour
 
             collisionTimer = 0f;
         }
+    }
+
+    private IEnumerator TimerTest()
+    {
+        yield return new WaitForSeconds(1f);
+
+        //codigo
     }
 }
