@@ -32,6 +32,12 @@ public class EnemyAgent : MonoBehaviour
         {
             _agent.isStopped = !_agent.isStopped;
         }
+
+        if (_isOnLadder && _agent.isOnOffMeshLink && !_animator.GetBool("isClimbing"))
+        {
+            _animator.SetBool("isClimbing", true);
+            _agent.speed = 0.5f;
+        }
     }
     
     private void OnTriggerEnter(Collider other)
@@ -39,13 +45,12 @@ public class EnemyAgent : MonoBehaviour
         if (other.CompareTag("Ladder"))
         {
             _isOnLadder = true;
-            _animator.SetBool("isClimbing", true);
-            _agent.speed = 0.5f;
         }
         
         if (other.CompareTag("LadderEnd"))
         {
-            _isOnLadder = true;
+            _isOnLadder = false;
+            
             _animator.SetBool("isClimbing", false);
             _agent.speed = 3.5f;
         }
