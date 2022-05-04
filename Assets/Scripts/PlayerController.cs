@@ -34,11 +34,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (healthSlider != null)
+        {
             healthSlider.maxValue = maxHp;
-        healthSlider.minValue = 0;
-        healthSlider.value = hp;
-        
-        healthText.text = hp + "/" + maxHp;
+            healthSlider.minValue = 0;
+            healthSlider.value = hp;
+
+            healthText.text = hp + "/" + maxHp;
+        }
         //healthText.text = String.Format("{0}/{1}", hp, maxHp); 
     }
 
