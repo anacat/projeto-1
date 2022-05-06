@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: a3ecc3540e520d04aaa66c8acc85e820, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4959eb46bfd2281449d1c4282ed44eaf, type: 2}
   m_LightingSettings: {fileID: 1095585150}
 --- !u!196 &4
 NavMeshSettings:
@@ -7527,13 +7527,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 1.02e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -8006,13 +8006,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5449738e+30, y: 2.538118e+11, z: 6.7421e+22, w: 2.8882904e+29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -8731,9 +8731,13 @@ PrefabInstance:
       propertyPath: inputController
       value: 
       objectReference: {fileID: 432997608}
+    - target: {fileID: 3825591780694212041, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3825591780694212043, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.6
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: 3825591780694212043, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8741,11 +8745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825591780694212043, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.85
+      value: -0.828
       objectReference: {fileID: 0}
     - target: {fileID: 3825591780786724727, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.71392
+      value: 85.13393
       objectReference: {fileID: 0}
     - target: {fileID: 3825591780786724727, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8753,11 +8757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825591780786724727, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.405855
+      value: 21.427856
       objectReference: {fileID: 0}
     - target: {fileID: 3825591781487466336, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.71392
+      value: 85.13393
       objectReference: {fileID: 0}
     - target: {fileID: 3825591781487466336, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8765,7 +8769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825591781487466336, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.405855
+      value: 21.427856
       objectReference: {fileID: 0}
     - target: {fileID: 3825591781487466337, guid: 35705579976adca45ac3fbc6cf5624cc, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -9757,13 +9761,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 1.02e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10674,13 +10678,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.8308436e+25, y: 2.7487e+20, z: 1.2642567e+19, w: 1.2972543e+10}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

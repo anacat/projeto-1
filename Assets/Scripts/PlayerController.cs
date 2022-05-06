@@ -30,6 +30,20 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
+
+        GameSave gameStats = new GameSave();
+        gameStats.coinsCaught = 2;
+
+        if (SaveManager.DoesSaveFileExist())
+        {
+            gameStats = SaveManager.Load();
+        }
+        else
+        {
+            Debug.Log("no save file");
+        }
+        
+        SaveManager.SaveGame(gameStats);
     }
 
     private void Start()

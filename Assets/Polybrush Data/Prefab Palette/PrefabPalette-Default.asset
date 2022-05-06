@@ -47,7 +47,7 @@ MonoBehaviour:
     name: Construction Light Low
   - gameObject: {fileID: 1562119382739742, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
     settings:
-      m_Strength: 57.15068
+      m_Strength: 3.9453044
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -63,7 +63,7 @@ MonoBehaviour:
     name: Rock1
   - gameObject: {fileID: 1422759184610782, guid: 092dfbd1d1f007a448a41cded731f699, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 5.8454876
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 10, y: 10, z: 10}
