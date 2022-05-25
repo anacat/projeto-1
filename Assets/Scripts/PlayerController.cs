@@ -90,6 +90,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ReceiveDamage(int damage)
+    {
+        hp -= damage;
+        hp = Mathf.Clamp(hp, 0, maxHp);
+            
+        healthSlider.value = hp;
+        healthText.text = hp + "/" + maxHp;
+    }
+
     private IEnumerator TimerTest()
     {
         yield return new WaitForSeconds(1f);

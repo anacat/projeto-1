@@ -62,5 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+        
+        //Debug.Log(groundedPlayer);
     }
 }

@@ -28,7 +28,7 @@ public class AgentObstacle : MonoBehaviour
         
         if (_canMove)
         {
-            transform.position = _initialPosition + new Vector3(Mathf.Sin(Time.time * 2f), 0);
+            transform.position = _initialPosition + new Vector3(Mathf.Sin(_timer * 2f), 0);
         }
     }
 }

@@ -13,10 +13,17 @@ public class EnemyAgent : MonoBehaviour
     private bool _isDead;
     private bool _isOnLadder;
 
+    private float _initialAngularSpeed;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        _initialAngularSpeed = _agent.angularSpeed;
     }
 
     private void Update()
@@ -45,6 +52,7 @@ public class EnemyAgent : MonoBehaviour
         if (other.CompareTag("Ladder"))
         {
             _isOnLadder = true;
+            _agent.angularSpeed = 0f;
         }
         
         if (other.CompareTag("LadderEnd"))
@@ -53,6 +61,7 @@ public class EnemyAgent : MonoBehaviour
             
             _animator.SetBool("isClimbing", false);
             _agent.speed = 3.5f;
+            _agent.angularSpeed = _initialAngularSpeed;
         }
     }
 
