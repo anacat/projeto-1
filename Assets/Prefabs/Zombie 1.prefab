@@ -2736,7 +2736,7 @@ GameObject:
   - component: {fileID: 8991577354388123926}
   - component: {fileID: 843845347657657780}
   m_Layer: 6
-  m_Name: Zombie
+  m_Name: Zombie 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2751,7 +2751,7 @@ Transform:
   m_GameObject: {fileID: 8073008164466503676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 27.655964, y: 0, z: 65.37655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 572541926629254616}
   - {fileID: 4573770895138968282}
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   hp: 10
   maxHp: 10
   healthBar: {fileID: 196580636461336325}
-  ragdoll: {fileID: 3270597423887495024, guid: 884c59e858f5f684ea7bd2eeea201019, type: 3}
+  ragdoll: {fileID: 3270597423887495024, guid: 6af77d6518a99a740a07e593d4baa1b5, type: 3}
   projectileSpawnPoint: {fileID: 1940261705}
   projectilePrefab: {fileID: 2425671878023374418, guid: 1e7b2b08bd2826c4297b548a3602d50e, type: 3}
   attackTime: 2

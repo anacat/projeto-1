@@ -58,12 +58,14 @@ public class EnemyController : MonoBehaviour
 
         healthBar.value = hp;
 
-        if (hp == 0)
+        if (hp == 0) //enemy died
         {
             Vector3 dir = transform.position - PlayerController.Instance.transform.position;
 
             GameObject rd = Instantiate(ragdoll, transform.position, transform.rotation); //instancia ragdoll
             rd.GetComponent<RagdollController>().ApplyForce(dir * 20f);
+            
+            GameManager.Instance.EnemyKilled();
             
             Destroy(gameObject);
         }
