@@ -37,6 +37,9 @@ public class EnemyController : MonoBehaviour
             ShootProjectile();            
             _projectileTimer = 0f;
         }
+
+        transform.LookAt(PlayerController.Instance.transform);
+        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
     }
 
     private void ShootProjectile()
@@ -45,7 +48,7 @@ public class EnemyController : MonoBehaviour
             Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         
         Rigidbody bRigidbody = projectile.GetComponent<Rigidbody>();
-        bRigidbody.velocity = projectileSpawnPoint.forward * 10f;
+        bRigidbody.velocity = (projectile.transform.forward * 5f) + new Vector3(0f, 5f, 0);
     }
 
     public void GotShot(int damage)
