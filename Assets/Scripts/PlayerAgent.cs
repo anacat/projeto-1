@@ -29,6 +29,6 @@ public class PlayerAgent : MonoBehaviour
             }
         }
         
-        Debug.Log("is jumping " + _agent.isOnOffMeshLink);
+        //Debug.Log("is jumping " + _agent.isOnOffMeshLink);
     }
 }

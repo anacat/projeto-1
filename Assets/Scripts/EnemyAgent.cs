@@ -39,12 +39,6 @@ public class EnemyAgent : MonoBehaviour
         {
             _agent.isStopped = !_agent.isStopped;
         }
-
-        if (_isOnLadder && _agent.isOnOffMeshLink && !_animator.GetBool("isClimbing"))
-        {
-            _animator.SetBool("isClimbing", true);
-            _agent.speed = 0.5f;
-        }
     }
     
     private void OnTriggerEnter(Collider other)
@@ -53,9 +47,12 @@ public class EnemyAgent : MonoBehaviour
         {
             _isOnLadder = true;
             _agent.angularSpeed = 0f;
+            _agent.speed = 0f;
+
+            StartCoroutine(LerpToPosition(other.transform.position, other.transform.eulerAngles));
         }
         
-        if (other.CompareTag("LadderEnd"))
+        if (_isOnLadder && other.CompareTag("LadderEnd"))
         {
             _isOnLadder = false;
             
@@ -65,11 +62,46 @@ public class EnemyAgent : MonoBehaviour
         }
     }
 
+    private IEnumerator LerpToPosition(Vector3 position, Vector3 rotation)
+    {
+        float timer = 0f;
+        float percentage = 0f;
+        float time = 0.1f;
+
+        float distance = Vector3.Distance(transform.position, position);
+        Debug.Log(distance);
+        
+        time *= distance;
+
+        Vector3 initialPosition = transform.position;
+        Vector3 initialRotation = transform.eulerAngles;
+
+        while (percentage < 1f)
+        {
+            timer += Time.deltaTime;
+            percentage = timer / time;
+            
+            transform.position = Vector3.Lerp(initialPosition, position, percentage);
+            transform.eulerAngles = Vector3.Lerp(initialRotation, rotation, percentage );
+            
+            yield return null;
+        }
+        
+        if (_isOnLadder && _agent.isOnOffMeshLink && !_animator.GetBool("isClimbing"))
+        {
+            _animator.SetBool("isClimbing", true);
+            _agent.speed = 0.1f;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Ladder"))
         {
             _isOnLadder = false;
+            _animator.SetBool("isClimbing", false);
+            _agent.speed = 3.5f;
+            _agent.angularSpeed = _initialAngularSpeed;
         }
     }
 }
